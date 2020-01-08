@@ -1,0 +1,154 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=51;
+	taxlabels
+	'blasthit|EPI_ISL_122074|A/mallard/Sweden/57/2002|A_/_H2N3|2002-XX-XX'[&accession="EPI_ISL_122074",colourName="red2",date="2002-XX-XX",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/57/2002",subtype="H2N3",year=2002]
+	'blasthit|EPI_ISL_158184|A/mallard/Sweden/79261/2008|A|2008-11-13'[&accession="EPI_ISL_158184",colourName="red2",date="13/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/79261/2008",subtype="A",year=2008]
+	'blasthit|EPI_ISL_158186|A/mallard/Sweden/80057/2008|A|2008-11-18'[&accession="EPI_ISL_158186",colourName="red2",date="18/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/80057/2008",subtype="A",year=2008]
+	'blasthit|EPI_ISL_158187|A/mallard/Sweden/80261/2008|A_/_H4N9|2008-11-21'[&accession="EPI_ISL_158187",colourName="red2",date="21/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/80261/2008",subtype="H4N9",year=2008]
+	'blasthit|EPI_ISL_158219|A/mallard/Sweden/5714/2005|A_/_H4N6|2005-11-02'[&accession="EPI_ISL_158219",colourName="red2",date="02/11/2005",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/5714/2005",subtype="H4N6",year=2005]
+	'blasthit|EPI_ISL_158220|A/mallard/Sweden/5724/2005|A_/_H4N2|2005-11-02'[&accession="EPI_ISL_158220",colourName="red2",date="02/11/2005",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/5724/2005",subtype="H4N2",year=2005]
+	'blasthit|EPI_ISL_158224|A/mallard/Sweden/5763/2005|A_/_H4N6|2005-11-04'[&accession="EPI_ISL_158224",colourName="red2",date="04/11/2005",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/5763/2005",subtype="H4N6",year=2005]
+	'blasthit|EPI_ISL_158228|A/mallard/Sweden/6134/2005|A_/_H4N6|2005-11-03'[&accession="EPI_ISL_158228",colourName="red2",date="03/11/2005",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/6134/2005",subtype="H4N6",year=2005]
+	'blasthit|EPI_ISL_158230|A/mallard/Sweden/7582/2003|A_/_H4N6|2003-11-05'[&accession="EPI_ISL_158230",colourName="red2",date="05/11/2003",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/7582/2003",subtype="H4N6",year=2003]
+	'blasthit|EPI_ISL_158292|A/mallard/Sweden/59896/2007|A_/_H4N6|2007-09-20'[&accession="EPI_ISL_158292",colourName="red2",date="20/09/2007",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/59896/2007",subtype="H4N6",year=2007]
+	'blasthit|EPI_ISL_158293|A/mallard/Sweden/59937/2007|A_/_H4N6|2007-09-22'[&accession="EPI_ISL_158293",colourName="red2",date="22/09/2007",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/59937/2007",subtype="H4N6",year=2007]
+	'blasthit|EPI_ISL_158321|A/mallard/Sweden/79167/2008|A|2008-11-12'[&accession="EPI_ISL_158321",colourName="red2",date="12/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/79167/2008",subtype="A",year=2008]
+	'blasthit|EPI_ISL_158324|A/mallard/Sweden/79230/2008|A|2008-11-13'[&accession="EPI_ISL_158324",colourName="red2",date="13/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/79230/2008",subtype="A",year=2008]
+	'blasthit|EPI_ISL_158327|A/mallard/Sweden/79328/2008|A_/_H4N6|2008-11-14'[&accession="EPI_ISL_158327",colourName="red2",date="14/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/79328/2008",subtype="H4N6",year=2008]
+	'blasthit|EPI_ISL_158333|A/mallard/Sweden/79372/2008|A_/_H4N2|2008-11-15'[&accession="EPI_ISL_158333",colourName="red2",date="15/11/2008",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/79372/2008",subtype="H4N2",year=2008]
+	'blasthit|EPI_ISL_189342|A/mallard/Sweden/737/2002|A_/_H10N2|2002-11-12'[&accession="EPI_ISL_189342",colourName="red2",date="12/11/2002",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/737/2002",subtype="H10N2",year=2002]
+	'blasthit|EPI_ISL_189346|A/mallard/Sweden/831/2002|A_/_H10N2|2002-11-14'[&accession="EPI_ISL_189346",colourName="red2",date="14/11/2002",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/831/2002",subtype="H10N2",year=2002]
+	'blasthit|EPI_ISL_189351|A/mallard/Sweden/4401/2004|A_/_H10N4|2004-06-18'[&accession="EPI_ISL_189351",colourName="red2",date="18/06/2004",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/4401/2004",subtype="H10N4",year=2004]
+	'blasthit|EPI_ISL_189352|A/mallard/Sweden/4411/2004|A_/_H10N4|2004-06-18'[&accession="EPI_ISL_189352",colourName="red2",date="18/06/2004",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/4411/2004",subtype="H10N4",year=2004]
+	'blasthit|EPI_ISL_189373|A/mallard/Sweden/102087/2009|A_/_H10N1|2009-11-17'[&accession="EPI_ISL_189373",colourName="red2",date="17/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/102087/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189374|A/mallard/Sweden/102260/2009|A_/_H10N1|2009-11-19'[&accession="EPI_ISL_189374",colourName="red2",date="19/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/102260/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189375|A/mallard/Sweden/104746/2009|A_/_H10N1|2009-11-21'[&accession="EPI_ISL_189375",colourName="red2",date="21/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/104746/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189377|A/mallard/Sweden/105186/2009|A_/_H10N1|2009-11-28'[&accession="EPI_ISL_189377",colourName="red2",date="28/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105186/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189378|A/mallard/Sweden/105259/2009|A_/_H10N1|2009-11-29'[&accession="EPI_ISL_189378",colourName="red2",date="29/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105259/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189379|A/mallard/Sweden/105323/2009|A_/_H10N1|2009-11-30'[&accession="EPI_ISL_189379",colourName="red2",date="30/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105323/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189380|A/mallard/Sweden/105364/2009|A_/_H10N1|2009-11-30'[&accession="EPI_ISL_189380",colourName="red2",date="30/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105364/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189381|A/mallard/Sweden/105365/2009|A_/_H10N1|2009-11-30'[&accession="EPI_ISL_189381",colourName="red2",date="30/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105365/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189382|A/mallard/Sweden/105402/2009|A_/_H10N1|2009-12-01'[&accession="EPI_ISL_189382",colourName="red2",date="01/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105402/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189383|A/mallard/Sweden/105404/2009|A_/_H10N1|2009-12-01'[&accession="EPI_ISL_189383",colourName="red2",date="01/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105404/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189384|A/mallard/Sweden/105465/2009|A_/_H10N1|2009-12-02'[&accession="EPI_ISL_189384",colourName="red2",date="02/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105465/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189385|A/mallard/Sweden/105474/2009|A_/_H10N1|2009-12-02'[&accession="EPI_ISL_189385",colourName="red2",date="02/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105474/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189386|A/mallard/Sweden/105486/2009|A_/_H10N1|2009-12-02'[&accession="EPI_ISL_189386",colourName="red2",date="02/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105486/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189387|A/mallard/Sweden/105501/2009|A_/_H10N1|2009-12-02'[&accession="EPI_ISL_189387",colourName="red2",date="02/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105501/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189389|A/mallard/Sweden/105536/2009|A_/_H10N1|2009-12-03'[&accession="EPI_ISL_189389",colourName="red2",date="03/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105536/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189390|A/mallard/Sweden/105565/2009|A_/_H10N1|2009-12-03'[&accession="EPI_ISL_189390",colourName="red2",date="03/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105565/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189391|A/mallard/Sweden/107688/2009|A_/_H10N1|2009-12-04'[&accession="EPI_ISL_189391",colourName="red2",date="04/12/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/107688/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189399|A/mallard/Sweden/60069/2007|A_/_H12N5|2007-10-15'[&accession="EPI_ISL_189399",colourName="red2",date="15/10/2007",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/60069/2007",subtype="H12N5",year=2007]
+	'blasthit|EPI_ISL_189400|A/mallard/Sweden/68529/2007|A_/_H12N5|2007-10-16'[&accession="EPI_ISL_189400",colourName="red2",date="16/10/2007",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/68529/2007",subtype="H12N5",year=2007]
+	'blasthit|EPI_ISL_189401|A/mallard/Sweden/69794/2007|A_/_H12N5|2007-11-12'[&accession="EPI_ISL_189401",colourName="red2",date="12/11/2007",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/69794/2007",subtype="H12N5",year=2007]
+	'blasthit|EPI_ISL_189418|A/mallard/Sweden/105254/2009|A_/_H10N1|2009-11-29'[&accession="EPI_ISL_189418",colourName="red2",date="29/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/105254/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_189614|A/mallard/Sweden/102214/2009|A_/_H10N1|2009-11-18'[&accession="EPI_ISL_189614",colourName="red2",date="18/11/2009",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/102214/2009",subtype="H10N1",year=2009]
+	'blasthit|EPI_ISL_243390|A/mallard_duck/Netherlands/40/2006|A_/_H6N8|2006-09-16'[&accession="EPI_ISL_243390",colourName="red2",date="16/09/2006",host="anseriformes",location="Netherlands",segment="seg7",source="blasthit",strain="A/mallard_duck/Netherlands/40/2006",subtype="H6N8",year=2006]
+	'blasthit|EPI_ISL_243522|A/mallard_duck/Netherlands/13/2012|A_/_H3N8|2012-10-01'[&accession="EPI_ISL_243522",colourName="red2",date="01/10/2012",host="anseriformes",location="Netherlands",segment="seg7",source="blasthit",strain="A/mallard_duck/Netherlands/13/2012",subtype="H3N8",year=2012]
+	'blasthit|EPI_ISL_243633|A/mallard_duck/Netherlands/34/2006|A_/_H3N8|2006-09-11'[&accession="EPI_ISL_243633",colourName="red2",date="11/09/2006",host="anseriformes",location="Netherlands",segment="seg7",source="blasthit",strain="A/mallard_duck/Netherlands/34/2006",subtype="H3N8",year=2006]
+	'blasthit|EPI_ISL_243659|A/mallard_duck/Netherlands/10/2012|A_/_H6N1|2012-09-05'[&accession="EPI_ISL_243659",colourName="red2",date="05/09/2012",host="anseriformes",location="Netherlands",segment="seg8",source="blasthit",strain="A/mallard_duck/Netherlands/10/2012",subtype="H6N1",year=2012]
+	'blasthit|EPI_ISL_267386|A/mallard_duck/Netherlands/34/2010|A_/_H3N2|2010-10-08'[&accession="EPI_ISL_267386",colourName="red2",date="08/10/2010",host="anseriformes",location="Netherlands",segment="seg8",source="blasthit",strain="A/mallard_duck/Netherlands/34/2010",subtype="H3N2",year=2010]
+	'blasthit|EPI_ISL_63531|A/mallard/Czech_Republic/14633-16/2007|A_/_H3N8|2007-09-19'[&accession="EPI_ISL_63531",colourName="red2",date="19/09/2007",host="anseriformes",location="Czech_Republic",segment="seg7",source="blasthit",strain="A/mallard/Czech_Republic/14633-16/2007",subtype="H3N8",year=2007]
+	'blasthit|EPI_ISL_73378|A/mallard/Sweden/45/2002|A_/_H11N8|2002-11-13'[&accession="EPI_ISL_73378",colourName="red2",date="13/11/2002",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/45/2002",subtype="H11N8",year=2002]
+	'blasthit|EPI_ISL_73380|A/mallard/Sweden/48/2002|A_/_H11N9|2002-11-14'[&accession="EPI_ISL_73380",colourName="red2",date="14/11/2002",host="anseriformes",location="Sweden",segment="seg7",source="blasthit",strain="A/mallard/Sweden/48/2002",subtype="H11N9",year=2002]
+	'blasthit|EPI_ISL_95121|A/Anas_platyrhynchos/Camargue/091863/09|A_/_H10N7|2009-05-20'[&accession="EPI_ISL_95121",colourName="red2",date="20/05/2009",host="anseriformes",location="Camargue",segment="seg7",source="blasthit",strain="A/Anas_platyrhynchos/Camargue/091863/09",subtype="H10N7",year=2009]
+	'seal|A/grey_seal/England/027661/2017|H3N8|MP|2017-02'[&!color=#2774c2,accession="noid",colourName="blue2",date="2017-02",host="seal",location="England",segment="seg7",source="seal",strain="A/grey_seal/England/027661/2017",subtype="H3N8",year=2017]
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('seal|A/grey_seal/England/027661/2017|H3N8|MP|2017-02'[&host="seal"]:0.012001,(('blasthit|EPI_ISL_243522|A/mallard_duck/Netherlands/13/2012|A_/_H3N8|2012-10-01'[&host="anseriformes"]:2.0E-6,((('blasthit|EPI_ISL_158187|A/mallard/Sweden/80261/2008|A_/_H4N9|2008-11-21'[&host="anseriformes"]:0.001023,(((('blasthit|EPI_ISL_243633|A/mallard_duck/Netherlands/34/2006|A_/_H3N8|2006-09-11'[&host="anseriformes"]:2.0E-6,'blasthit|EPI_ISL_243390|A/mallard_duck/Netherlands/40/2006|A_/_H6N8|2006-09-16'[&host="anseriformes"]:0.001023)[&label=89,host="anseriformes"]:0.002099,(('blasthit|EPI_ISL_158228|A/mallard/Sweden/6134/2005|A_/_H4N6|2005-11-03'[&host="anseriformes"]:0.002067,'blasthit|EPI_ISL_158230|A/mallard/Sweden/7582/2003|A_/_H4N6|2003-11-05'[&host="anseriformes"]:0.001026)[&label=0,host="anseriformes"]:2.0E-6,('blasthit|EPI_ISL_189352|A/mallard/Sweden/4411/2004|A_/_H10N4|2004-06-18'[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_189351|A/mallard/Sweden/4401/2004|A_/_H10N4|2004-06-18'[&host="anseriformes"]:1.0E-6)[&label=93.5,host="anseriformes"]:0.003119)[&label=78.8,host="anseriformes"]:0.002104)[&label=0,host="anseriformes"]:0.001025,(('blasthit|EPI_ISL_122074|A/mallard/Sweden/57/2002|A_/_H2N3|2002-XX-XX'[&host="anseriformes"]:2.0E-6,((('blasthit|EPI_ISL_189342|A/mallard/Sweden/737/2002|A_/_H10N2|2002-11-12'[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_73378|A/mallard/Sweden/45/2002|A_/_H11N8|2002-11-13'[&host="anseriformes"]:0.0)[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_189346|A/mallard/Sweden/831/2002|A_/_H10N2|2002-11-14'[&host="anseriformes"]:1.0E-6)[&label=98.4,host="anseriformes"]:0.005298,'blasthit|EPI_ISL_73380|A/mallard/Sweden/48/2002|A_/_H11N9|2002-11-14'[&host="anseriformes"]:0.001023)[&label=0,host="anseriformes"]:2.0E-6)[&label=0,host="anseriformes"]:2.0E-6,((('blasthit|EPI_ISL_189400|A/mallard/Sweden/68529/2007|A_/_H12N5|2007-10-16'[&host="anseriformes"]:2.0E-6,'blasthit|EPI_ISL_189399|A/mallard/Sweden/60069/2007|A_/_H12N5|2007-10-15'[&host="anseriformes"]:1.0E-6)[&label=0,host="anseriformes"]:3.0E-6,'blasthit|EPI_ISL_189401|A/mallard/Sweden/69794/2007|A_/_H12N5|2007-11-12'[&host="anseriformes"]:0.001023)[&label=92.4,host="anseriformes"]:0.002063,(((((('blasthit|EPI_ISL_158186|A/mallard/Sweden/80057/2008|A|2008-11-18'[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_158327|A/mallard/Sweden/79328/2008|A_/_H4N6|2008-11-14'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_158324|A/mallard/Sweden/79230/2008|A|2008-11-13'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_158333|A/mallard/Sweden/79372/2008|A_/_H4N2|2008-11-15'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_158321|A/mallard/Sweden/79167/2008|A|2008-11-12'[&host="anseriformes"]:0.0)[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_158184|A/mallard/Sweden/79261/2008|A|2008-11-13'[&host="anseriformes"]:1.0E-6)[&label=86.6,host="anseriformes"]:0.001023,(('blasthit|EPI_ISL_158219|A/mallard/Sweden/5714/2005|A_/_H4N6|2005-11-02'[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_158220|A/mallard/Sweden/5724/2005|A_/_H4N2|2005-11-02'[&host="anseriformes"]:0.0)[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_158224|A/mallard/Sweden/5763/2005|A_/_H4N6|2005-11-04'[&host="anseriformes"]:1.0E-6)[&label=82.6,host="anseriformes"]:0.001023)[&label=0,host="anseriformes"]:2.0E-6)[&label=84.1,host="anseriformes"]:0.001023)[&label=0,host="anseriformes"]:2.0E-6)[&label=86.7,host="anseriformes"]:0.003119,'blasthit|EPI_ISL_95121|A/Anas_platyrhynchos/Camargue/091863/09|A_/_H10N7|2009-05-20'[&host="anseriformes"]:0.002062)[&label=0,host="anseriformes"]:2.0E-6)[&label=0,host="anseriformes"]:3.0E-6,'blasthit|EPI_ISL_63531|A/mallard/Czech_Republic/14633-16/2007|A_/_H3N8|2007-09-19'[&host="anseriformes"]:2.0E-6)[&label=0,host="anseriformes"]:2.0E-6,(('blasthit|EPI_ISL_158293|A/mallard/Sweden/59937/2007|A_/_H4N6|2007-09-22'[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_158292|A/mallard/Sweden/59896/2007|A_/_H4N6|2007-09-20'[&host="anseriformes"]:1.0E-6)[&label=77.1,host="anseriformes"]:0.00103,'blasthit|EPI_ISL_243659|A/mallard_duck/Netherlands/10/2012|A_/_H6N1|2012-09-05'[&host="anseriformes"]:0.003175)[&label=79,host="anseriformes"]:0.001029)[&label=84.8,host="anseriformes"]:0.001022)[&label=0,host="anseriformes"]:2.0E-6,((('blasthit|EPI_ISL_189374|A/mallard/Sweden/102260/2009|A_/_H10N1|2009-11-19'[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189614|A/mallard/Sweden/102214/2009|A_/_H10N1|2009-11-18'[&host="anseriformes"]:0.0)[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_189373|A/mallard/Sweden/102087/2009|A_/_H10N1|2009-11-17'[&host="anseriformes"]:1.0E-6)[&label=85.2,host="anseriformes"]:0.001023,((((((((((((((('blasthit|EPI_ISL_189418|A/mallard/Sweden/105254/2009|A_/_H10N1|2009-11-29'[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189391|A/mallard/Sweden/107688/2009|A_/_H10N1|2009-12-04'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189385|A/mallard/Sweden/105474/2009|A_/_H10N1|2009-12-02'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189383|A/mallard/Sweden/105404/2009|A_/_H10N1|2009-12-01'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189380|A/mallard/Sweden/105364/2009|A_/_H10N1|2009-11-30'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189375|A/mallard/Sweden/104746/2009|A_/_H10N1|2009-11-21'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189389|A/mallard/Sweden/105536/2009|A_/_H10N1|2009-12-03'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189384|A/mallard/Sweden/105465/2009|A_/_H10N1|2009-12-02'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189387|A/mallard/Sweden/105501/2009|A_/_H10N1|2009-12-02'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189378|A/mallard/Sweden/105259/2009|A_/_H10N1|2009-11-29'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189379|A/mallard/Sweden/105323/2009|A_/_H10N1|2009-11-30'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189382|A/mallard/Sweden/105402/2009|A_/_H10N1|2009-12-01'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189381|A/mallard/Sweden/105365/2009|A_/_H10N1|2009-11-30'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189386|A/mallard/Sweden/105486/2009|A_/_H10N1|2009-12-02'[&host="anseriformes"]:0.0)[&host="anseriformes"]:0.0,'blasthit|EPI_ISL_189390|A/mallard/Sweden/105565/2009|A_/_H10N1|2009-12-03'[&host="anseriformes"]:0.0)[&host="anseriformes"]:1.0E-6,'blasthit|EPI_ISL_189377|A/mallard/Sweden/105186/2009|A_/_H10N1|2009-11-28'[&host="anseriformes"]:1.0E-6)[&label=0,host="anseriformes"]:2.0E-6)[&label=97.6,host="anseriformes"]:0.004198)[&label=79.2,!name="79.2",host="anseriformes"]:0.002823,'blasthit|EPI_ISL_267386|A/mallard_duck/Netherlands/34/2010|A_/_H3N2|2010-10-08'[&host="anseriformes"]:0.007073);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="Arial";
+	set branchLabels.fontSize=9;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set colour.scheme.label="label:InterpolatingContinuous{{false,false,0.0,0.0},#-1,#-16777216}";
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=true;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Names";
+	set nodeLabels.fontName="Arial";
+	set nodeLabels.fontSize=10;
+	set nodeLabels.fontStyle=1;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="host";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=5.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="label";
+	set nodeShapeInternal.isShown=true;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Diamond;
+	set nodeShapeInternal.size=6.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=true;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=0.005;
+	set scaleAxis.minorTicks=0.0025;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.004;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="Arial";
+	set tipLabels.fontSize=12;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="decreasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

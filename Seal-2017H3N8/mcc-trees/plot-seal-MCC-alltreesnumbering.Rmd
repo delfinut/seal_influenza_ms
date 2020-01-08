@@ -1,0 +1,402 @@
+---
+title: "plot_beast_trees"
+author: "DV"
+date: "2/2/2018"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo  =  TRUE)
+```
+
+```{r}
+#setwd("~/Dropbox (Cambridge University)/_Projects/P5_Seals/Seal-II/gisaid/02_tree/6_beast/results/mcc-trees")
+```
+
+```{r}
+rm(list = ls()) 
+```
+
+```{r}
+library(ggplot2)
+library(ggtree)
+library(tidyr)
+library(lubridate)
+library(treeio)
+library(ggpubr)
+#require(devtools)
+#install_version("ggplot2", version  =  "2.2.1", repos  =  "http://cran.us.r-project.org")
+```
+
+
+
+```{r}
+seg4_mrsd  =  as.Date("2018-10-19")
+seg7_mrsd  =  as.Date("2017-02-01")
+seg6_mrsd  =  as.Date("2017-02-01")
+seg5_mrsd  =  as.Date("2017-02-01")
+seg8_mrsd  =  as.Date("2018-09-01")
+seg3_mrsd  =  as.Date("2017-02-01")
+seg2_mrsd  =  as.Date("2017-09-01")
+seg1_mrsd  =  as.Date("2017-02-01")
+
+seg1_tr <- read.beast("trees/seg1-rlocal-combined-r123-median-mcc.tre")
+seg2_tr <- read.beast("trees/seg2-rlocal-combined-r123-median-mcc.tre")
+seg3_tr <- read.beast("trees/seg3-rlocal-combined-r123-median-mcc.tre")
+seg4_tr <- read.beast("trees/seg4-rlocal-combined-r123-median-mcc.tre")
+seg5_tr <- read.beast("trees/seg5-rlocal-combined-r123-median-mcc.tre")
+seg6_tr <- read.beast("trees/seg6-rlocal-combined-r123-median-mcc.tre")
+seg7_tr <- read.beast("trees/seg7-rlocal-combined-r123-median-mcc.tre")
+seg8_tr <- read.beast("trees/seg8-rlocal-combined-r123-median-mcc.tre")
+
+```
+
+```{r}
+dd <-  read.delim("annotations-2.txt")
+dd <-  dplyr::mutate(dd, newlab = paste(subtype, strain, sep='|'))
+dd$source <- gsub("seal", "seal query sequence", dd$source )
+```
+
+```{r}
+mypalette <- c("gray" = "#737373",
+               "blue1" = "#9ecae1",
+               "blue2" = "#3182bd", 
+               "red1" = "#fee0d2",
+               "red2" = "#fc9272",
+               "red3" = "#de2d26")
+
+mylabels <- c("gray" = "other/unknown avian",
+               "blue1" = "human",
+               "blue2" = "seal", 
+               "red1" = "charadriiformes",
+               "red2" = "anseriformes",
+               "red3" = "galliformes")
+
+dd$colourName <- factor(dd$colourName,
+                                   levels = c("blue2", "blue1", "red1", "red2", "red3", "gray"))
+```
+
+
+```{r}
+seg1_nodes <-  ggtree(seg1_tr, mrsd=seg1_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) +
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg2_nodes <-  ggtree(seg2_tr, mrsd=seg2_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg3_nodes <-  ggtree(seg3_tr, mrsd=seg3_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg4_nodes <-  ggtree(seg4_tr, mrsd=seg4_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg5_nodes <-  ggtree(seg5_tr, mrsd=seg5_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg6_nodes <-  ggtree(seg6_tr, mrsd=seg6_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg7_nodes <-  ggtree(seg7_tr, mrsd=seg7_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+
+seg8_nodes <-  ggtree(seg8_tr, mrsd=seg8_mrsd) + theme_tree2() +
+  geom_tiplab(size =3) + 
+  geom_text2(aes(subset=!isTip, label=node, hjust=1.2, vjust=-0.8, size=3))
+```
+
+```{r}
+#seg1_nodes
+#seg2_nodes
+#seg3_nodes
+#seg4_nodes
+#seg5_nodes
+#seg6_nodes
+#seg7_nodes
+#seg8_nodes
+
+```
+
+
+
+```{r}
+
+pseg1 <- ggtree(seg1_tr, mrsd = seg1_mrsd, ladderize = T) + theme_tree2()
+pseg1 <- pseg1 %<+% dd +
+  geom_hilight(node = 64, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==64, label = round(decimal_date(seg1_mrsd) - height_median,2)), hjust = -0.2, vjust = -0.5, size = 1.8) +
+  ggtitle(paste("(A) PB2")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg1, filename = paste("seg1-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg2 <- ggtree(seg2_tr, mrsd = seg2_mrsd, ladderize = T) + theme_tree2()
+pseg2 <- pseg2 %<+% dd +
+  geom_hilight(node = 73, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==73, label = round(decimal_date(seg2_mrsd) - height_median,2)), hjust = 1.1, vjust = -0.5, size = 1.8) +
+  ggtitle(paste("(B) PB1")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg2, filename = paste("seg2-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+
+```
+
+```{r}
+pseg3 <- ggtree(seg3_tr, mrsd = seg3_mrsd, ladderize = T) + theme_tree2()
+pseg3 <- pseg3 %<+% dd +
+  geom_hilight(node = 76, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==76, label = round(decimal_date(seg3_mrsd) - height_median,2)), hjust = -0.2, vjust = 0.2, size = 1.8) +
+  ggtitle(paste("(C) PA")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg3, filename = paste("seg3-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg4 <- ggtree(seg4_tr, mrsd = seg4_mrsd, ladderize = T) + theme_tree2()
+pseg4 <- pseg4 %<+% dd +
+  geom_hilight(node = 97, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==97, label = round(decimal_date(seg4_mrsd) - height_median,2)), hjust = -0.2, vjust = 0.3,  size = 1.8) +
+  ggtitle(paste("(D) HA")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg4, filename = paste("seg4-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg5 <- ggtree(seg5_tr, mrsd = seg5_mrsd, ladderize = T) + theme_tree2()
+pseg5 <- pseg5 %<+% dd +
+  geom_hilight(node = 72, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==72, label = round(decimal_date(seg5_mrsd) - height_median,2)), hjust = 1.1, vjust = -0.5, size = 1.8) +
+  ggtitle(paste("(E) NP")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg5, filename = paste("seg5-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg6 <- ggtree(seg6_tr, mrsd = seg6_mrsd, ladderize = T) + theme_tree2()
+pseg6 <- pseg6 %<+% dd +
+  geom_hilight(node = 82, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==82, label = round(decimal_date(seg6_mrsd) - height_median,2)), hjust = -0.2, vjust = 0.3, size = 1.8) +
+  ggtitle(paste("(F) NA")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg6, filename = paste("seg6-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg7 <- ggtree(seg7_tr, mrsd = seg7_mrsd, ladderize = T) + theme_tree2()
+pseg7 <- pseg7 %<+% dd +
+  geom_hilight(node = 93, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==93, label = round(decimal_date(seg7_mrsd) - height_median,2)), hjust = -0.2, vjust = 0.3, size = 1.8) +
+  ggtitle(paste("(G) MP")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg7, filename = paste("seg7-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+pseg8 <- ggtree(seg8_tr, mrsd = seg8_mrsd, ladderize = T) + theme_tree2()
+pseg8 <- pseg8 %<+% dd +
+  geom_hilight(node = 61, fill = "gray", alpha = 0.5) + 
+  geom_segment2(aes(subset = isTip, xend = max(x) - .001, yend = y), linetype = "dotted", size = .3) +
+  geom_text2(aes(subset = isTip, label = newlab, x = max(x)), size = 3, hjust = -.025) +
+  geom_tippoint(aes(color = colourName, shape = source), size = 2.2) +
+  scale_color_manual(values=mypalette, labels=mylabels) +
+  scale_x_continuous(breaks = seq(1987, 2017, 5), 
+                     #minor_breaks = seq(1990,2018, 1), 
+                     limits  =  c(NA, 2042)) +
+  geom_point2(aes(subset =  !is.na(posterior), fill = posterior), shape = 23, size = 1.5) +
+  scale_fill_continuous(high = "black", low= "white", breaks=c(0,0.5,1),labels=c(0.0,0.5,1.0),limits=c(0,1)) +
+  geom_text2(aes(subset = node==61, label = round(decimal_date(seg8_mrsd) - height_median,2)), hjust = -0.2, vjust = 0.3, size = 1.8) +
+  ggtitle(paste("(H) NS")) +
+  labs(colour = "Host", shape = "Source", fill = "Posterior support") +
+  guides(shape = guide_legend(title = "Source", order = 1),
+         colour = guide_legend(title = "Host", order = 2),
+         fill = guide_colorbar(title = "Posterior support"), order = 3) +
+         theme(legend.position = "right") +
+              theme(panel.grid.major    =  element_line(color = "black", size = .2),
+                    #panel.grid.minor    =  element_line(color = "grey", size = .2),
+                    panel.grid.major.y  =  element_blank(),
+                    panel.grid.minor.y  =  element_blank(),
+                    axis.line.x = element_line(size  = 0.5),
+                    axis.text  =  element_text(size  =  10),
+                    title  =  element_text(size  =  12)) 
+
+ggsave(pseg8, filename = paste("seg8-rlocal-mcctree",".pdf", sep = ""), width = 8, height = 10)
+```
+
+```{r}
+
+png("all-trees.png",
+    width = 28*300,        # 8 x 300 pixels
+    height = 20*300,
+    res = 300,            # 300 pixels per inch
+    pointsize = 12)
+ggarrange(pseg1, pseg2, pseg3, pseg4, pseg5, pseg6, pseg7, pseg8, ncol = 4, nrow = 2, common.legend = F)
+
+dev.off()
+
+
+```
+
+```{r}
+png("HA-NA-PB2-trees.png",
+    width = 22*300,        # 8 x 300 pixels
+    height = 14*300,
+    res = 300,            # 300 pixels per inch
+    pointsize = 12)
+ggarrange(pseg1, pseg4, pseg6, ncol = 3, nrow = 1, common.legend = F)
+
+dev.off()
+```
+

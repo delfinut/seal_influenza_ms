@@ -1,0 +1,264 @@
+---
+title: "plot_beast_trees"
+author: "DV"
+date: "2018-12-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+rm(list=ls()) 
+```
+
+```{r}
+library(ggplot2)
+library(ggtree)
+library(readr)
+require(gridExtra)
+library(ggpubr)
+library(phytools)
+```
+
+
+
+```{r}
+
+seg1tree <- read.tree("hits-q-seg-1-mauto-fasttree.tre")
+seg2tree <- read.tree("hits-q-seg-2-mauto-fasttree.tre")
+seg3tree <- read.tree("hits-q-seg-3-mauto-fasttree.tre")
+seg5tree <- read.tree("hits-q-seg-5-mauto-fasttree.tre")
+seg7tree <- read.tree("hits-q-seg-7-mauto-fasttree.tre")
+seg8tree <- read.tree("hits-q-seg-8-mauto-fasttree.tre")
+
+mid_seg1tree <- midpoint.root(seg1tree)
+mid_seg2tree <- midpoint.root(seg2tree)
+mid_seg3tree <- midpoint.root(seg3tree)
+mid_seg5tree <- midpoint.root(seg5tree)
+mid_seg7tree <- midpoint.root(seg7tree)
+mid_seg8tree <- midpoint.root(seg8tree)
+
+
+```
+
+```{r}
+dd <-  read.delim("annotations.txt", strip.white = T, sep = "\t")
+
+dd$num_repeats <- factor(dd$num_repeats, levels = c("seal query",6,4,3,2,1))
+rcols <- c("1" = "#636363", "2" = "#fbb4b9", "3" = "#f768a1", "4" = "#c51b8a", "6" = "#7a0177", "seal query" = "#2c7fb8")
+
+```
+
+```{r}
+
+png(filename = "seg1-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p1 <-  ggtree(mid_seg1tree) 
+  
+p1 <- p1 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("A (PB2)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p1
+ 
+dev.off()
+  
+         
+```
+
+```{r}
+
+png(filename = "seg2-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p2 <-  ggtree(mid_seg2tree) 
+  
+p2 <- p2 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("B (PB1)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p2
+ 
+dev.off()
+  
+         
+```
+
+
+
+
+```{r}
+
+png(filename = "seg3-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p3 <-  ggtree(mid_seg3tree) 
+  
+p3 <- p3 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("C (PA)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p3
+ 
+dev.off()
+  
+```
+
+```{r}
+
+png(filename = "seg5-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p4 <-  ggtree(mid_seg5tree) 
+  
+p4 <- p4 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("D (NP)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p4
+ 
+dev.off()
+  
+  
+         
+```
+
+```{r}
+
+png(filename = "seg7-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p5 <-  ggtree(mid_seg7tree) 
+  
+p5 <- p5 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("E (MP)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p5
+ 
+dev.off()
+  
+         
+```
+
+```{r}
+png(filename = "seg8-ml.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p6 <-  ggtree(mid_seg8tree) 
+  
+p6 <- p6 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("F (NS)") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p6
+ 
+dev.off()
+```
+
+```{r}
+
+png(filename = "seg1-ml-single.png", 
+    res = 300,
+    height = 14*300,
+    width = 11*300,
+    pointsize = 14)
+
+p1 <-  ggtree(mid_seg1tree) 
+  
+p1 <- p1 %<+% dd +
+  geom_tiplab(size =2.5, hjust = -0.03, aes(color = num_repeats)) + xlim(NA, 0.35) +
+  geom_point2(aes(subset= !is.na(label) & label > 75), shape=18, size=2.5) +
+  geom_tippoint(aes(color = num_repeats), size = 2.0) +
+  scale_color_manual(values = rcols) +
+  geom_treescale(offset = 2, y = -3) + 
+  ggtitle("PB2") +
+  labs(colour = "Number of repeats\nacross segments") +
+  theme(legend.position="right",
+        text = element_text(size =18)) 
+  
+p1
+ 
+dev.off()
+  
+  
+         
+```
+
+
+```{r}
+png(file = "ML-all-mid.png",
+  width = 35*300,        # 8 x 300 pixels
+  height = 30*300,
+  res = 300,            # 300 pixels per inch
+  pointsize = 15)
+
+ggarrange(p1, p2, p3, p4, p5, p6, ncol=3, nrow=2, common.legend = TRUE, legend="right") 
+
+dev.off()
+
+```
